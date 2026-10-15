@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5th Monthsary Surprise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <!-- Music button (optional song: music/song.mp3) -->
+  <button id="musicBtn" class="music-btn" aria-label="Toggle music" title="Music on/off">♪</button>
+  <audio id="bgm" loop preload="auto">
+    <source src="music/backgroundmusic.mp3" type="audio/mpeg" />
+    <source src="music/1.mp3" type="audio/mpeg" />
+    <source src="music/2.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Progress dots -->
+  <nav class="dots" id="dots" aria-hidden="true"></nav>
+
+  <!-- 1. WELCOME -->
+  <section id="home" class="page active">
+    <div class="container">
+      <div class="heart-glow" aria-hidden="true">
+        <svg viewBox="0 0 100 90" width="110" height="100">
+          <path d="M50 82 C10 52 6 28 24 16 C37 8 47 15 50 24 C53 15 63 8 76 16 C94 28 90 52 50 82Z"
+                fill="none" stroke="#c8f7c5" stroke-width="3" stroke-linejoin="round" />
+        </svg>
+      </div>
+      <h1 class="title">Happy 5th Monthsary,<br />Palangga</h1>
+      <p class="subtitle">You make my world brighter,<br />just by being in it. 💚</p>
+      <button id="openBtn" class="btn">Open Your Surprise</button>
+    </div>
+  </section>
+
+  <!-- 2. LETTER -->
+  <section id="letter" class="page">
+    <div class="container">
+      <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open the letter">
+        <div class="env-flap"></div>
+        <div class="env-body"><span class="env-hint">Tap to open 💌</span></div>
+        <div class="paper" id="paper">
+          <p class="hand">My Dearest Shasha,</p>
+          <p>Happy 5th Monthsary, palangga nakooo!</p>
+          <p>Five months may seem short, but with you, every day feels like a lifetime. Thank you for being my peace, my happiness, and my greatest adventure.</p>
+          <p>Grabi, langga, mura ra jud og gi-time lapse ang atong five months, oii. Pero bisan pa og paspas ra kaayo ang panahon, daghan na kaayo tag memories nga akong i-treasure forever. From the days nga happy kaayo tang duha, nagkinatawanay, naghinilakay, ug nag-uban sa usag usa, hangtod sa tanan natong naagian within these five months. Dili lang kay sa five months, kundi sukad pa jud sa pagsugod sa atong story. And look at us now, palangga, we're still here, choosing each other and doing our best to make this relationship work. Bisan og daghan tag pagsulay nga maagian, padayon lang gihapon ta, ha? We may not be perfect, but I hope we never stop learning, growing, and loving each other.</p>
+          <p>Langga, even with the distance between us, you are the closest thing to home I have ever known. Daghan kaayo kog mga butang nga nasulayan ug naagian nga ikaw ra jud ang nakauban nako. Daghan kaayo tag first times, both yours and mine, nga nahimong special tungod kay kita ang nag-uban. Bisan sa calls ug chats ra ta usahay magkuyog, ma-feel gihapon nako nga duol kaayo ka sa akong kasingkasing. Distance may keep us apart physically, pero dili na makapugong sa gugma nga naa nako para nimo.</p>
+          <p>Ikaw akong pahulay sa tanang kakapoy nga akong maagian sa usa ka adlaw. And honestly, one of the things I look forward to the most every day is getting to talk to you, whether sa buntag or inig gabii. Bisan ordinaryo ra nga adlaw, bisan simple ra atong mga storya, you always find a way to make my day special. Sometimes, wala ra tay laing buhaton kundi magstorya ug magkatawa, pero para nako, those little moments mean so much. Kay dili man kinahanglan nga special ang adlaw para mahimong memorable, basta ikaw akong kauban. </p>
+          <p>Langga nako, pasensya jud kaayo kung usahay dili ko maayo mo-express sa akong feelings. Dili man gud ko perpekto sa pag-ingon sa akong gibati, ug usahay dili ko kabalo unsaon pag-explain kung unsa tika ka-love. Pero I hope you can feel it through my actions, my efforts, and the way I keep choosing you every day. Bisan dili ko pirmi kabalo sa saktong words nga akong isulti, I want you to know nga tinuod ug dako kaayo akong gugma para nimo.</p>
+          <p>Thank you for staying, for understanding me, for making me happy, and for being part of my life. Thank you for all the memories we've made and for all the little things you do that make me feel loved. I'm so grateful nga ikaw ang akong na-meet ug ikaw ang akong nakat-unan nga higugmaon in this special way.</p>
+          <p>I know nga daghan pa tag maagian in the future. There will be happy days, difficult days, misunderstandings, and moments nga mingawon kaayo ta sa usag usa. But I hope that through every season of our lives, we will continue to choose each other, understand each other, and remind ourselves why we started. I don't promise nga everything will always be easy, but I promise to keep learning, growing, and doing my best for us.</p>
+          <p>I will love you through every season of our lives, palangga nako. Through the good days and the bad days, through the distance and the waiting, and through every new chapter nga atong sugdan together. I hope these five months are only the beginning of a much longer and more beautiful story for us. More monthsaries to come, until these months turn into anniversaries, and hopefully, a lifetime of choosing each other. </p>
+          <p>Happy 5th Monthsary again, my dearest Shasha nga palangga nako! Thank you for being you, and thank you for being my person. If I could go back to the beginning, I would still choose to know you, love you, and build this story with you all over again</p>
+          <p>I love you today, tomorrow, and forever and always, palangga nakooo. More monthsaries, more memories, more first times, more laughter, and more years with you. Always us, langga nako. Hangtod sa atong mga pangandoy mahimong tinuod. I love you so, so much! 💚🌷😘</p>
+          <p class="hand sign">— Your Reyrey 💚</p>
+        </div>
+      </div>
+      <button class="btn nav-next" data-go="memories">Our Memories</button>
+    </div>
+  </section>
+
+  <!-- 3. MEMORIES -->
+  <section id="memories" class="page">
+    <div class="container wide">
+      <h2 class="heading">Our Memories</h2>
+      <div class="polaroids">
+        <figure class="polaroid" style="--r:-4deg">
+          <img src="images/photo1.jpg" alt="Memory 1" onerror="this.classList.add('missing')" />
+          <figcaption>My soafer pretty palangling 🤗😍</figcaption>
+        </figure>
+        <figure class="polaroid" style="--r:3deg">
+          <img src="images/photo2.jpg" alt="Memory 2" onerror="this.classList.add('missing')" />
+          <figcaption>Late night talks with my one and only one palangling</figcaption>
+        </figure>
+        <figure class="polaroid" style="--r:-2deg">
+          <img src="images/photo3.jpg" alt="Memory 3" onerror="this.classList.add('missing')" />
+          <figcaption>Favorite smile ☺😍</figcaption>
+        </figure>
+        <figure class="polaroid" style="--r:5deg">
+          <img src="images/photo4.jpg" alt="Memory 4" onerror="this.classList.add('missing')" />
+          <figcaption>Us, always forever and ever🥰</figcaption>
+        </figure>
+      </div>
+      <p class="caption-script">Different places, same hearts. 💚</p>
+      <button class="btn nav-next" data-go="reasons">Five Reasons</button>
+    </div>
+  </section>
+
+  <!-- 4. REASONS -->
+  <section id="reasons" class="page">
+    <div class="container">
+      <div class="card">
+        <h2 class="heading dark">Five Months,<br />Five Reasons</h2>
+        <ol class="reasons">
+          <li>You have the kindest heart ever my palangling.</li>
+          <li>You always make me smile palangga nako saksi ang tiki unsa ka dako akong ngisi.</li>
+          <li>You're very strong, even when it's hard grabi jud plangga I'm so proud of you palangga jud grabi ka boutan og ka kugihan.</li>
+          <li>You believe in us, thankyou so much palangga nako for seeing me for who I am.</li>
+          <li>You're simply you and that's enough, I love you always palangga nakoo.</li>
+        </ol>
+        <p class="hand grateful">I'm so grateful for you palangga nakoo. 💚</p>
+      </div>
+      <button class="btn nav-next" data-go="final">Continue</button>
+    </div>
+  </section>
+
+  <!-- 5. FINAL -->
+  <section id="final" class="page">
+    <div class="container">
+      <div class="moon" aria-hidden="true">☾</div>
+      <h2 class="title small">More Months<br />With You palangga</h2>
+      <p class="subtitle">The past 5 months have been beautiful grabi jud bisan pa daghan pagsulay but thankyou so muchiee palangga nakoo ha, I'm even more excited for all the months and years ahead excited jud kaayou palangga heheheh.</p>
+      <p class="subtitle">More monthsaries to come, until they turn into anniversaries, and hopefully, forever na gyud ta. May it always be us, choosing each other, growing together, and loving each other through every season of our life. ♾️💚</p>
+      <p class="subtitle">Here's to more memories, more laughter, more video calls, and more beautiful moments together. No matter the distance, ikaw gihapon akong palangga, today, tomorrow, and always my one and only palangga. 💚🌷💚</p>
+      <p class="hand big">Forever and ever, always us. I love youuu! 😘</p>
+      <button id="foreverBtn" class="btn ghost">Forever &amp; Always</button>
+      <button id="replayBtn" class="link-btn">↺ Watch again</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
