@@ -54,26 +54,68 @@ envelope.addEventListener('keydown', e => {
   if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openEnvelope(); }
 });
 
-/* ---------- Music ---------- */
+
+
+/* ---------- Music Playlist ---------- */
+
 const bgm = document.getElementById('bgm');
 const musicBtn = document.getElementById('musicBtn');
+
+// List of songs in order
+const playlist = [
+  'music/backgroundmusic.mp3',
+  'music/1.mp3',
+  'music/2.mp3'
+];
+
+let currentTrack = 0;
 let musicOn = false;
 
-function playMusic() {
-  bgm.volume = 0.5;
-  bgm.play()
-    .then(() => { musicOn = true; musicBtn.classList.add('on'); })
-    .catch(() => { /* no song added yet, or autoplay blocked - that's fine */ });
+// Load the current song
+function loadTrack(index) {
+  currentTrack = index;
+  bgm.src = playlist[currentTrack];
+  bgm.load();
 }
+
+// Play music
+async function playMusic() {
+  try {
+    bgm.volume = 0.5;
+
+    await bgm.play();
+
+    musicOn = true;
+    musicBtn.classList.add('on');
+    musicBtn.setAttribute('aria-label', 'Turn music off');
+  } catch (error) {
+    console.log('Unable to play music:', error);
+  }
+}
+
+// Pause or resume music using the button
 musicBtn.addEventListener('click', () => {
   if (musicOn) {
     bgm.pause();
     musicOn = false;
     musicBtn.classList.remove('on');
+    musicBtn.setAttribute('aria-label', 'Turn music on');
   } else {
     playMusic();
   }
 });
+
+// Automatically play the next song when the current song ends
+bgm.addEventListener('ended', () => {
+  const nextTrack = (currentTrack + 1) % playlist.length;
+
+  loadTrack(nextTrack);
+  playMusic();
+});
+
+// Start with the first song loaded
+loadTrack(0);
+
 
 /* ---------- Floating hearts (final page) ---------- */
 let heartTimer = null;
